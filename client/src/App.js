@@ -1,3 +1,4 @@
+//Dashboard
 import Dashboard from './components/Dashboard/Dashboard';
 import Student from './components/Student';
 
