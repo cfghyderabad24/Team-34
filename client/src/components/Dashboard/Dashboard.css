@@ -1,0 +1,18 @@
+/* Add some padding and margin for better spacing */
+.card {
+    border: 1px solid #ddd;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effect */
+.card-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive layout for mobile devices */
+@media (max-width: 768px) {
+    .d-flex.flex-md-row {
+        flex-direction: column !important;
+    }
+}
