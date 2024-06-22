@@ -13,7 +13,7 @@ exports.UploadStudentData = async (req, res) => {
         // Create a new student document
         const newStudent = new Student({
             name, email, gender, college, stream, yearOfGraduation, occupation,
-            Grade12, yearOfScholarship, amount, password: email, status: "Uploaded", approved: "Not Approved"
+            Grade12, yearOfScholarship, amount, password: email, status: "Uploaded", approved: "Approved"
         });
 
         // Save the new student document
@@ -33,7 +33,7 @@ exports.UploadStudentData = async (req, res) => {
 };
 
 exports.ViewApproved = async (req, res) => {
-  const { ngoId } = req.body;
+  const { ngoId } = req.query;
 
   try {
       const ngo = await NGO.findOne({ ngoId });

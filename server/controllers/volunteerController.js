@@ -13,7 +13,7 @@ exports.ViewNgo = async(req,res)=>{
 }
 
 exports.ViewStudents = async (req, res) => {
-  const { email } = req.body;
+  const { email } = req.query;
 
   try {
     // Find the NGO by email
