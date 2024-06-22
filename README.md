@@ -10,3 +10,8 @@ http://localhost:4567/cfg34/ngo/login
 
 // VIEW NGOS
 http://localhost:4567/cfg34/vol/ViewAll
+
+// VIEW STUDENTS
+
+http://localhost:4567/cfg34/vol/ViewStudents
+
