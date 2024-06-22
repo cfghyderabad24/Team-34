@@ -4,8 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Dashboard.css'; // Ensure to create this CSS file for custom styles
 
 const Dashboard = () => {
-    const [totalStudents, setTotalStudents] = useState(0);
-    const [partnerNGOs, setPartnerNGOs] = useState(0);
+    const [totalStudents, setTotalStudents] = useState(3489);
+    const [partnerNGOs, setPartnerNGOs] = useState(4);
     const Volunteers = 234;
 
     useEffect(() => {
@@ -27,19 +27,19 @@ const Dashboard = () => {
     return (
         <div className="container mt-5">
             <div className="d-flex flex-column flex-md-row justify-content-around align-items-center">
-                <div className="card text-center shadow-sm m-2 card-hover" style={{ width: '18rem' }}>
+                <div className="card text-center shadow-sm m-2 card-hover" style={{ width: '18rem', backgroundColor:"#00DCDC",color:"white" }}>
                     <div className="card-body border rounded">
                         <h5 className="card-title">Total Students Benefited</h5>
                         <p className="card-text">{totalStudents}</p>
                     </div>
                 </div>
-                <div className="card text-center shadow-sm m-2 card-hover" style={{ width: '18rem' }}>
+                <div className="card text-center shadow-sm m-2 card-hover"  style={{ width: '18rem', backgroundColor:"#00DCDC",color:"white" }}>
                     <div className="card-body border rounded">
                         <h5 className="card-title">Number of Volunteers</h5>
                         <p className="card-text">{Volunteers}</p>
                     </div>
                 </div>
-                <div className="card text-center shadow-sm m-2 card-hover" style={{ width: '18rem' }}>
+                <div className="card text-center shadow-sm m-2 card-hover"  style={{ width: '18rem', backgroundColor:"#00DCDC",color:"white" }}>
                     <div className="card-body border rounded">
                         <h5 className="card-title">Number of Partner NGOs</h5>
                         <p className="card-text">{partnerNGOs}</p>

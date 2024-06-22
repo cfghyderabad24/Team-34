@@ -21,8 +21,11 @@ exports.UploadStudentData = async (req, res) => {
 
         // Find the NGO by ngoId
         const ngo = await NGO.findOne({ ngoId });
+        if (!ngo) {
+            return res.status(404).json({ msg: "NGO not found" });
+        }
         // Push the new student data into the NGO's students array
-        ngo.students.push({ email});
+        ngo.students.push({ email });
         await ngo.save();
 
         return res.status(200).json({ msg: "Student registered successfully." });
@@ -31,39 +34,41 @@ exports.UploadStudentData = async (req, res) => {
         return res.status(500).json({ msg: "Server Error" });
     }
 };
+
 exports.ViewApproved = async (req, res) => {
-  const { ngoId } = req.body;
+    const { ngoId } = req.query; // Use req.query for GET request parameters
+    console.log({ ngoId });
 
-  try {
-      const ngo = await NGO.findOne({ ngoId });
+    try {
+        const ngo = await NGO.findOne({ ngoId });
 
-      if (!ngo) {
-          return res.status(404).json({ msg: "NGO not found" });
-      }
-      const studentEmails = ngo.students.map(student => student.email);
-      const approvedStudents = await Student.find({ email: { $in: studentEmails }, approved: 'Approved' });
+        if (!ngo) {
+            return res.status(404).json({ msg: "NGO not found" });
+        }
+        const studentEmails = ngo.students.map(student => student.email);
+        const approvedStudents = await Student.find({ email: { $in: studentEmails }, approved: 'Approved' });
 
-      return res.status(200).json({ msg: "Approved Students", students: approvedStudents });
-  } catch (error) {
-      console.error(error);
-      return res.status(500).json({ msg: "Server Error" });
-  }
+        return res.status(200).json({ msg: "Approved Students", students: approvedStudents });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ msg: "Server Error" });
+    }
 };
 
-exports.Login = async (req,res) =>{
-  const { email ,password} = req.body;
-  try {
-    const ngo = await NGO.findOne({email});
-    if(!ngo)
-      {
-        return res.status(400).json({msg : "NGO Not found"});
-      }
-      if(ngo.password===password)
-        {
-          return res.status(200).json({msg : "Login Success"});
+exports.Login = async (req, res) => {
+    const { email, password } = req.body;
+    try {
+        const ngo = await NGO.findOne({ email });
+        if (!ngo) {
+            return res.status(400).json({ msg: "NGO Not found" });
         }
-  } catch (error) {
-    console.error(error);
-      return res.status(500).json({ msg: "Server Error" });
-  }
-}
+        if (ngo.password === password) {
+            return res.status(200).json({ msg: "Login Success" });
+        } else {
+            return res.status(400).json({ msg: "Incorrect password" });
+        }
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ msg: "Server Error" });
+    }
+};
