@@ -14,7 +14,8 @@ const studentSchema = new mongoose.Schema({
   yearOfScholarship : {type : Number},
   amount : {type : String},
   approved :{type : String},
-  existingStudent : {type:Boolean}
+  existingStudent : {type:Boolean},
+  role : {type :String}
  }, { timestamps: true });
 
 module.exports = mongoose.model('Student', studentSchema);

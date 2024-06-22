@@ -15,12 +15,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('common'));
 
 // //Routes
- const Ngo = require('./routes/Ngo.router');
-// const student = require('./routes/Student.router');
+const Ngo = require('./routes/Ngo.router');
+const student = require('./routes/Student.router');
+const Vol = require('./routes/Volunteer.router');
+
 
 // // Usage
 app.use('/cfg34/ngo',Ngo);
-// app.use('/cfg34/student',student);
+app.use('/cfg34/student',student);
+app.use('/cfg34/vol',Vol);
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URL)
