@@ -49,3 +49,21 @@ exports.ViewApproved = async (req, res) => {
       return res.status(500).json({ msg: "Server Error" });
   }
 };
+
+exports.Login = async (req,res) =>{
+  const { email ,password} = req.body;
+  try {
+    const ngo = await NGO.findOne({email});
+    if(!ngo)
+      {
+        return res.status(400).json({msg : "NGO Not found"});
+      }
+      if(ngo.password===password)
+        {
+          return res.status(200).json({msg : "Login Success"});
+        }
+  } catch (error) {
+    console.error(error);
+      return res.status(500).json({ msg: "Server Error" });
+  }
+}
