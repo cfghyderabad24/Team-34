@@ -31,6 +31,7 @@ exports.UploadStudentData = async (req, res) => {
         return res.status(500).json({ msg: "Server Error" });
     }
 };
+
 exports.ViewApproved = async (req, res) => {
   const { ngoId } = req.body;
 

@@ -6,3 +6,7 @@ http://localhost:4567/cfg34/ngo/uploadStudentData
 http://localhost:4567/cfg34/ngo/viewApproved
 
 http://localhost:4567/cfg34/ngo/login
+
+
+// VIEW NGOS
+http://localhost:4567/cfg34/vol/ViewAll
