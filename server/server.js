@@ -14,8 +14,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('common'));
 
-
-
 // //Routes
  const Ngo = require('./routes/Ngo.router');
 const student = require('./routes/Student.router');
@@ -28,7 +26,6 @@ app.use('/cfg34/student',student);
 mongoose.connect(process.env.MONGODB_URL)
 .then(() => console.log('MongoDB connected'))
 .catch((err) => console.error('MongoDB connection error:', err));
-
 
 // app.get("/all",(req,res)=>{
 //   let products=  Student.find({})
