@@ -1,0 +1,21 @@
+.alumni-details {
+  background-color: #00a1a3;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.another{
+  width : 200px;
+  margin : auto;
+}
+.alumni-details strong {
+  font-weight: bold;
+}
+.alumni-details ul {
+  margin-top: 5px;
+  padding-left: 20px;
+}
+.alumni-details li {
+  list-style-type: disc;
+}

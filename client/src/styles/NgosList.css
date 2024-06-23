@@ -1,0 +1,33 @@
+.ngos-list-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .ngos-list-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .ngos-list {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .ngos-column {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .ngos-column h2 {
+    margin-bottom: 10px;
+  }
+  
+  .ngos-column ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .ngos-column li {
+    padding: 5px 0;
+  }
+  
