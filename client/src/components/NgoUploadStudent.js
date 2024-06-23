@@ -61,6 +61,7 @@ const NGOUploadPage = () => {
   };
 
   return (
+    <div className="form-container mt-5">
     <div className=" form-container mt-5">
       <h1>Student Scholarship Form</h1>
       <form onSubmit={handleSubmit}>
