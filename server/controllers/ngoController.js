@@ -52,7 +52,6 @@ exports.ViewApproved = async (req, res) => {
   }
 };
 
-
 exports.Login = async (req,res) =>{
   const { email ,password} = req.body;
   try {
